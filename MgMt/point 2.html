@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<p style="text-align:center;"><img src="police.png" alt="Logo"></p>
+
+</head>
+
+
+<div class="container">
+
+  <input class="form-control" id="myInput" type="text" placeholder="Veillez entrer un nom , prenom  ou titre du service  pour une recherche..">
+  <br>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Noms</th>
+        <th>Prenoms</th>
+        <th>Services</th>
+        <th>Date arrivee</th>
+        <th>Date depart </th>
+        <th>options</th>
+
+      </tr>
+    </thead>
+
+    <tbody id="myTable">
+      <tr>
+        <td>--</td>
+        <td>--</td>
+        <td>--</td>
+        <td>--</td>
+        <td>--</td>
+        <td>--</td>
+        <td>  <button type="button" class="btn btn-primary btn-xs">arriv</button>
+        <button type="button" class="btn btn-primary btn-xs">Dprt</button>
+        <button type="button" class="btn btn-primary btn-xs">absence</button></td>
+
+      </tr>
+
+    </tbody>
+  </table>
+
+</div>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+<footer class="pt-4 my-md-5 pt-md-5 border-down">
+
+
+
+           <div class="footer"><img src="ditt.jpg"width="30" height="30">
+
+
+          <span style="color:black">&copy; DITT 2019</span>
+        </div>
+
+</footer>
+
+</body>
+</html>
